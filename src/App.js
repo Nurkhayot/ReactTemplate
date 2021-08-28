@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+
+// Components
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+
+//Images
+import rasm from "./Assets/Images/rasm.jpg";
+
+// SVG
+import Apple from "./Components/Lib/Svg/Random";
 
 function App() {
+  const spacing = 50;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main>
+        Main
+        <img
+          className="rasm"
+          src={rasm}
+          width="100%"
+          alt="inforamtion"
+          style={{ marginBottom: 5, marginTop: spacing }}
+        />
+        <Apple width={200} height={100} />
+      </main>
+      <Footer />
+    </>
   );
 }
 
