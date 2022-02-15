@@ -15,8 +15,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
-        Main
+      
         <img
           className="rasm"
           src={rasm}
@@ -25,7 +24,7 @@ function App() {
           style={{ marginBottom: 5, marginTop: spacing }}
         />
         <Apple width={200} height={100} />
-      </main>
+      
       <Footer />
     </>
   );
