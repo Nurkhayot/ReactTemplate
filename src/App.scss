@@ -19,7 +19,15 @@
 *::before {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+  //box-sizing: inherit; qilishning sababi qayisdir elementga box-sizing: content-box; kerak bo'lsa qilishimiz mumkun, agar box-sizing: border-box qilganimizda unday qilishning ilji bo'lmas edi.
+}
+
+html {
+  height: 100%; //content kam bo'lsa ham doim ekran to'lib turishini taminlaydi. 
+  scroll-behavior: smooth;
   box-sizing: border-box;
+  //box-sizing:border-box; bu padding, margin, borderlarni o'rnatilgan width ichida hosil qiladi, yani widthni kattalashishini oldini oladi. 
 }
 
 body {
@@ -37,5 +45,31 @@ body {
 }
 
 img {
-  vertical-align: middle;
+  vertical-align: middle; //rasmlar hosil qiladigan bo'shliqni olib tashlaydi.
+}
+
+
+/*argin ekran kattarganda asosiy content o'rtada joylashuvi, 
+padding orqali ekran kichirayganda \asosiy content  ikki yonga taqalib qolishini oldini oladi. 
+max-width containerning uzunligi loyhaga qarab belgilandi lekin asosan 1140px bo'ladi, shuningdek width emas max-width qilishning sababi
+width bo'lsa ekran kichirayganda quyida scroll payod bo'ladi. bu noqulaylikning oldini olish uchun max-widht beriladi, maksimal shuncha bo'lsin lekin
+undan kichik bo'lishi ham mumkun degani, width:100% esa content kam bo'lgan vaqti width 1140pxdan kam bo'lib qolmasligi uchun qo'yilgan.
+*/
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
