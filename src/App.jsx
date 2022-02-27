@@ -1,33 +1,21 @@
 import "./App.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Components
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
-
-//Images
-import rasm from "./Assets/Images/rasm.jpg";
-
-// SVG
-import Apple from "./Components/Lib/Svg/Random";
+//Pages
+import Home from "./Pages/Home"
+import About from "./Pages/About"
+import ErorPage from "./Pages/ErorPage"
 
 function App() {
-  const spacing = 50;
   return (
-    <>
-      <Header />
-      
-        <img
-          className="rasm"
-          src={rasm}
-          width="100%"
-          alt="inforamtion"
-          style={{ marginBottom: 5, marginTop: spacing }}
-        />
-        <Apple width={200} height={100} />
-      
-      <Footer />
-    </>
-  );
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<ErorPage />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
